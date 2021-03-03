@@ -70,7 +70,6 @@ exports.getUser = async (req, res) => {
           phone: user.phone,
           avatar: user.avatar,
           address: user.address,
-          purchasedBooks,
         },
       },
     });
