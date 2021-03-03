@@ -52,7 +52,7 @@ router.post("/login", login);
 router.get("/check-auth", authenticated, checkAuth);
 
 // users
-router.get("/users", authenticated, isAdmin, getUsers);
+router.get("/users", getUsers);
 router.get("/user", authenticated, getUser);
 router.patch("/editUser", authenticated, editUser);
 router.patch("/editPic", uploadFile("imageFile"), authenticated, editPic);
