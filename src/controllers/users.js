@@ -63,20 +63,13 @@ exports.getUser = async (req, res) => {
     res.send({
       status: "success",
       data: {
-        user: {
-          fullName: user.fullName,
-          email: user.email,
-          gender: user.gender,
-          phone: user.phone,
-          avatar: user.avatar,
-          address: user.address,
-        },
+        user,
       },
     });
   } catch (err) {
     console.log(err);
     res.status(500).send({
-      message: "Server Error",
+      message: "Server Error user",
     });
   }
 };
