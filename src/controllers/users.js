@@ -36,30 +36,30 @@ exports.getUser = async (req, res) => {
         exclude: ["id", "createdAt", "updatedAt", "password"],
       },
     });
-    const purchasedBooks = await PurchasedBook.findAll({
-      where: {
-        user: req.user.id,
-        status: "true",
-      },
-      attributes: {
-        exclude: [
-          "id",
-          "createdAt",
-          "updatedAt",
-          "bookId",
-          "transaction",
-          "user",
-          "status",
-        ],
-      },
-      include: {
-        as: "book",
-        model: Book,
-        attributes: {
-          exclude: ["createdAt", "updatedAt", "role"],
-        },
-      },
-    });
+    // const purchasedBooks = await PurchasedBook.findAll({
+    //   where: {
+    //     user: req.user.id,
+    //     status: "true",
+    //   },
+    //   attributes: {
+    //     exclude: [
+    //       "id",
+    //       "createdAt",
+    //       "updatedAt",
+    //       "bookId",
+    //       "transaction",
+    //       "user",
+    //       "status",
+    //     ],
+    //   },
+    //   include: {
+    //     as: "book",
+    //     model: Book,
+    //     attributes: {
+    //       exclude: ["createdAt", "updatedAt", "role"],
+    //     },
+    //   },
+    // });
     res.send({
       status: "success",
       data: {
