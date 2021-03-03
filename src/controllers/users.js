@@ -1,4 +1,4 @@
-const { Users, PurchasedBook, Book } = require("../../models");
+const { User, PurchasedBook, Book } = require("../../models");
 
 //
 // get user
@@ -28,7 +28,7 @@ exports.getUsers = async (req, res) => {
 // get user by id
 exports.getUser = async (req, res) => {
   try {
-    const user = await Users.findOne({
+    const user = await User.findOne({
       where: {
         id: req.user.id,
       },
