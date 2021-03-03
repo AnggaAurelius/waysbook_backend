@@ -1,4 +1,4 @@
-const { User, PurchasedBook, Book } = require("../../models");
+const { Users, PurchasedBook, Book } = require("../../models");
 
 //
 // get user
@@ -28,38 +28,38 @@ exports.getUsers = async (req, res) => {
 // get user by id
 exports.getUser = async (req, res) => {
   try {
-    const user = await User.findOne({
+    const user = await Users.findOne({
       where: {
-        id: 4,
+        id: req.user.id,
       },
       attributes: {
         exclude: ["id", "createdAt", "updatedAt", "password"],
       },
     });
-    const purchasedBooks = await PurchasedBook.findAll({
-      where: {
-        user: req.user.id,
-        status: "true",
-      },
-      attributes: {
-        exclude: [
-          "id",
-          "createdAt",
-          "updatedAt",
-          "bookId",
-          "transaction",
-          "user",
-          "status",
-        ],
-      },
-      include: {
-        as: "book",
-        model: Book,
-        attributes: {
-          exclude: ["createdAt", "updatedAt", "role"],
-        },
-      },
-    });
+    // const purchasedBooks = await PurchasedBook.findAll({
+    //   where: {
+    //     user: req.user.id,
+    //     status: "true",
+    //   },
+    //   attributes: {
+    //     exclude: [
+    //       "id",
+    //       "createdAt",
+    //       "updatedAt",
+    //       "bookId",
+    //       "transaction",
+    //       "user",
+    //       "status",
+    //     ],
+    //   },
+    //   include: {
+    //     as: "book",
+    //     model: Book,
+    //     attributes: {
+    //       exclude: ["createdAt", "updatedAt", "role"],
+    //     },
+    //   },
+    // });
     res.send({
       status: "success",
       data: {
