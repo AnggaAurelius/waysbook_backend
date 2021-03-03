@@ -141,7 +141,7 @@ exports.editPic = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).send({
-      message: "Server Error",
+      message: "Server Error pic",
     });
   }
 };
