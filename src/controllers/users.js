@@ -28,14 +28,14 @@ exports.getUsers = async (req, res) => {
 // get user by id
 exports.getUser = async (req, res) => {
   try {
-    const user = await User.findOne({
-      where: {
-        id: req.user.id,
-      },
-      attributes: {
-        exclude: ["id", "createdAt", "updatedAt", "password"],
-      },
-    });
+    // const user = await User.findOne({
+    //   where: {
+    //     id: req.user.id,
+    //   },
+    //   attributes: {
+    //     exclude: ["id", "createdAt", "updatedAt", "password"],
+    //   },
+    // });
     const purchasedBooks = await PurchasedBook.findAll({
       where: {
         user: req.user.id,
@@ -63,7 +63,7 @@ exports.getUser = async (req, res) => {
     res.send({
       status: "success",
       data: {
-        user,
+        // user,
         purchasedBooks,
       },
     });
