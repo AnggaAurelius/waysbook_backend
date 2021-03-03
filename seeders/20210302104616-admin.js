@@ -12,6 +12,8 @@ module.exports = {
         phone: "1234567",
         address: "mojokerto",
         avatar: "profile.png",
+        createdAt: "2017-01-01",
+        updatedAt: "2019-01-11",
       },
     ]);
   },
