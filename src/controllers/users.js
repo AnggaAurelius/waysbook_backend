@@ -28,43 +28,42 @@ exports.getUsers = async (req, res) => {
 // get user by id
 exports.getUser = async (req, res) => {
   try {
-    // const user = await User.findOne({
-    //   where: {
-    //     id: req.user.id,
-    //   },
-    //   attributes: {
-    //     exclude: ["id", "createdAt", "updatedAt", "password"],
-    //   },
-    // });
-    const purchasedBooks = await PurchasedBook.findAll({
+    const user = await User.findOne({
       where: {
-        user: req.user.id,
-        status: "true",
+        id: req.user.id,
       },
       attributes: {
-        exclude: [
-          "id",
-          "createdAt",
-          "updatedAt",
-          "bookId",
-          "transaction",
-          "user",
-          "status",
-        ],
-      },
-      include: {
-        as: "book",
-        model: Book,
-        attributes: {
-          exclude: ["createdAt", "updatedAt", "role"],
-        },
+        exclude: ["id", "createdAt", "updatedAt", "password"],
       },
     });
+    // const purchasedBooks = await PurchasedBook.findAll({
+    //   where: {
+    //     user: req.user.id,
+    //     status: "true",
+    //   },
+    //   attributes: {
+    //     exclude: [
+    //       "id",
+    //       "createdAt",
+    //       "updatedAt",
+    //       "bookId",
+    //       "transaction",
+    //       "user",
+    //       "status",
+    //     ],
+    //   },
+    //   include: {
+    //     as: "book",
+    //     model: Book,
+    //     attributes: {
+    //       exclude: ["createdAt", "updatedAt", "role"],
+    //     },
+    //   },
+    // });
     res.send({
       status: "success",
       data: {
-        // user,
-        purchasedBooks,
+        user,
       },
     });
   } catch (err) {
