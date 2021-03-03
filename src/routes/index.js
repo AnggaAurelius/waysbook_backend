@@ -54,8 +54,8 @@ router.get("/check-auth", authenticated, checkAuth);
 // users
 router.get("/users", authenticated, isAdmin, getUsers);
 router.get("/user", authenticated, getUser);
-router.patch("/editUser", authenticated, editUser);
-router.patch("/editPic", uploadFile("imageFile"), authenticated, editPic);
+router.patch("/edit-user", authenticated, editUser);
+router.patch("/edit-pic", uploadFile("imageFile"), authenticated, editPic);
 
 // cart
 router.get("/cart", authenticated, getCarts);
