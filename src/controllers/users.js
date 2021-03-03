@@ -78,8 +78,7 @@ exports.getUser = async (req, res) => {
 // edit user
 exports.editUser = async (req, res) => {
   try {
-    const { gender, phone, address } = req.body;
-    const { files } = req;
+    const { gender, phone, address, role } = req.body;
     const user = await User.findOne({
       where: {
         id: req.user.id,
@@ -89,6 +88,7 @@ exports.editUser = async (req, res) => {
       gender,
       phone,
       address,
+      role,
     });
 
     const userUpdated = await User.findOne({
