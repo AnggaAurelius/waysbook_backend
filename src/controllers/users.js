@@ -30,7 +30,7 @@ exports.getUser = async (req, res) => {
   try {
     const user = await User.findOne({
       where: {
-        id: 2,
+        id: 4,
       },
       attributes: {
         exclude: ["id", "createdAt", "updatedAt", "password"],

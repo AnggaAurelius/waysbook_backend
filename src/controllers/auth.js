@@ -35,7 +35,7 @@ exports.register = async (req, res) => {
 
     const user = await User.create({
       ...req.body,
-      role: "ADMIN",
+      role: "USER",
       gender: "male",
       phone: "098430243",
       address: "Di sana",
