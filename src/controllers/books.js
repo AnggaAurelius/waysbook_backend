@@ -105,7 +105,7 @@ exports.promo = async (req, res) => {
   try {
     const books = await Book.findAll({
       where: {
-        publicationDate: 2007,
+        publicationDate: "2007",
       },
       attributes: {
         exclude: ["createdAt", "updatedAt"],
