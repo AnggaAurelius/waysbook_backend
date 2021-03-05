@@ -4,6 +4,7 @@ const { authenticated } = require("../middlewares/auth");
 const { isAdmin } = require("../middlewares/checkRole");
 const { uploadBook } = require("../middlewares/uploadBook");
 const { uploadFile } = require("../middlewares/upload");
+const { uploadFiles } = require("../middlewares/uploadFile");
 
 const {
   getUsers,
@@ -55,7 +56,8 @@ router.get("/check-auth", authenticated, checkAuth);
 router.get("/users", authenticated, isAdmin, getUsers);
 router.get("/user", authenticated, getUser);
 router.patch("/edit-user", authenticated, editUser);
-router.patch("/edit-pic", uploadFile("imageFile"), authenticated, editPic);
+router.patch("/edit-pic", uploadFiles("thumbnail"), authenticated, editPic);
+// router.patch("/edit-pic", uploadFile("imageFile"), authenticated, editPic);
 
 // cart
 router.get("/cart", authenticated, getCarts);

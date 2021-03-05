@@ -40,7 +40,8 @@ exports.register = async (req, res) => {
       phone: "098430243",
       address: "Di sana",
       password: hashedPassword,
-      avatar: "profile.png",
+      avatar:
+        "https://res.cloudinary.com/anggafile/image/upload/v1614783546/images/profile_bo2dta.png",
     });
 
     const secretKey = "your-secret-key";

@@ -1,2 +1,2 @@
-release: node_modules/.bin/sequelize db:migrate; node_modules/.bin/sequelize db:seed:all;
-web: npm start
+release: node_modules/.bin/sequelize db:migrate;
+web: npm start;
