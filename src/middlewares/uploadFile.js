@@ -4,10 +4,6 @@ const express = require("express");
 const multer = require("multer");
 
 cloudinary.config({
-  // cloud_name: process.env.CLOUD_NAME,
-  // api_key: process.env.API_KEY,
-  // api_secret: process.env.API_SECRET,
-
   cloud_name: "anggafile",
   api_key: "328778432635281",
   api_secret: "uxVM9O6mfOfFvfz9_aJylQ58x9Y",
@@ -24,7 +20,7 @@ exports.uploadFiles = (imageFile, bookFile) => {
         // karna file yang diupload berbentuk epub maka tambahkan param dengan type raw
         // dan hanya mengizikan jenis file type epub dan saat diupload beri ext .epub
         return {
-          folder: "tes",
+          folder: "pdf",
           // resource_type: "raw",
           allowedFormats: "pdf",
           format: "pdf",
@@ -36,7 +32,7 @@ exports.uploadFiles = (imageFile, bookFile) => {
         // simpan file hasil upload ke folder windowofworld dari clodynary
         // dan hanya mengizikan jenis file type image dan sisanya otomatis di create cloudinary
         return {
-          folder: "tes",
+          folder: "images",
           allowedFormats: ["jpg", "jpeg", "png"],
         };
       }
