@@ -76,12 +76,16 @@ router.delete("/clear", authenticated, deleteSum);
 router.get("/books", getBooks);
 router.get("/promo", promo);
 router.get("/book/:id", getBooksById);
-router.post("/upload-book", uploadBook("thumbnail", "bookAttachment"), addBook);
+router.post(
+  "/upload-book",
+  uploadFiles("thumbnail", "bookAttachment"),
+  addBook
+);
 
 // transaction
 router.post(
   "/addTransaction",
-  uploadFile("imageFile"),
+  uploadFiles("thumbnail"),
   authenticated,
   addTransaction
 );
