@@ -23,7 +23,7 @@ exports.addTransaction = async (req, res) => {
     });
     const newTransaction = await Transaction.create({
       userId: req.user.id,
-      attachment: req.files.imageFile[0].filename,
+      attachment: req.files.thumbnail[0].path,
       sum: sum.pay,
       payment: "Pending",
     });
