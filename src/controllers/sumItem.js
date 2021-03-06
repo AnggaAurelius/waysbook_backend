@@ -13,8 +13,7 @@ exports.getSum = async (req, res) => {
 
     if (!sum) {
       return res.send({
-        status: "error",
-        message: `Book with Not Existed`,
+        message: `Cart is empty`,
       });
     }
 
