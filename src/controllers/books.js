@@ -75,8 +75,8 @@ exports.addBook = async (req, res) => {
       ISBN,
       price,
       description,
-      thumbnail: files.thumbnail[0].filename,
-      bookAttachment: files.bookAttachment[0].filename,
+      thumbnail: files.thumbnail[0].path,
+      bookAttachment: files.bookAttachment[0].path,
     });
     const book = await Book.findOne({
       where: {
