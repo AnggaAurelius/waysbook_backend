@@ -13,14 +13,14 @@ exports.addTransaction = async (req, res) => {
     //     user: req.user.id,
     //   },
     // });
-    //   const sum = await sumItem.findOne({
-    //     where: {
-    //       user: req.user.id,
-    //     },
-    //     attributes: {
-    //       exclude: ["createdAt", "updatedAt"],
-    //     },
-    // });
+    const sum = await sumItem.findOne({
+      where: {
+        user: req.user.id,
+      },
+      attributes: {
+        exclude: ["createdAt", "updatedAt"],
+      },
+    });
     console.log(req.files);
     const newTransaction = await Transaction.create({
       userId: req.user.id,
