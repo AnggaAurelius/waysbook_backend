@@ -11,6 +11,9 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
       },
+      attachment: {
+        type: Sequelize.STRING,
+      },
       sum: {
         type: Sequelize.INTEGER,
       },

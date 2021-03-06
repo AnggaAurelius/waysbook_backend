@@ -21,16 +21,12 @@ exports.addTransaction = async (req, res) => {
         exclude: ["createdAt", "updatedAt"],
       },
     });
-    console.log(req.files);
     const newTransaction = await Transaction.create({
       userId: req.user.id,
-      payment: req.files.thumbnail[0].path,
+      attachment: req.files.thumbnail[0].path,
       sum: sum.pay,
-      // // payment: "Pending",
-      // createdAt: "2017-01-01",
-      // updatedAt: "2019-01-11",
+      payment: "Pending",
     });
-    console.log(req.files.thumbnail[0].path);
     // const transaction = await Transaction.findOne({
     //   where: {
     //     attachment: newTransaction.attachment,

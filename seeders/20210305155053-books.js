@@ -25,7 +25,7 @@ module.exports = {
         pages: "32",
         ISBN: "893404345776",
         author: "Made",
-        price: "44000",
+        price: 44000,
         description:
           "The fourth member of the Classic Literature Club; she joined after the other three. She and the boys attended the same middle school. She doesn't get along well with Hotaro though their relationship starts to improve after she befriends Eru. Mayaka has a ",
         bookAttachment:
