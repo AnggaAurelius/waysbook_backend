@@ -24,9 +24,9 @@ exports.addTransaction = async (req, res) => {
     console.log(req.files);
     const newTransaction = await Transaction.create({
       userId: req.user.id,
-      attachment: req.files.thumbnail[0].path,
+      payment: req.files.thumbnail[0].path,
       sum: 10000000,
-      payment: "Pending",
+      // payment: "Pending",
       createdAt: "2017-01-01",
       updatedAt: "2019-01-11",
     });
