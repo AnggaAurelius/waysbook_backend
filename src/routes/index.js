@@ -84,7 +84,7 @@ router.post(
 
 // transaction
 router.post(
-  "/addTransaction",
+  "/add-transaction",
   uploadFiles("thumbnail"),
   authenticated,
   addTransaction
