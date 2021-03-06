@@ -6,20 +6,25 @@ const { uploadBook } = require("../middlewares/uploadBook");
 const { uploadFile } = require("../middlewares/upload");
 const { uploadFiles } = require("../middlewares/uploadFile");
 
+// User
 const {
   getUsers,
   getUser,
   editUser,
   editPic,
 } = require("../controllers/users");
-
 const { register, login, checkAuth } = require("../controllers/auth");
+
+// Book
 const {
   getBooks,
   getBooksById,
   addBook,
   promo,
+  deleteBook,
 } = require("../controllers/books");
+
+// Cart
 const {
   getCarts,
   getCart,
@@ -27,6 +32,8 @@ const {
   deleteCart,
   deleteAll,
 } = require("../controllers/cart");
+
+// Sum Items
 const {
   getSum,
   addSUm,
@@ -34,11 +41,14 @@ const {
   deleteSum,
 } = require("../controllers/sumItem");
 
+// Transaction
 const { addTransaction } = require("../controllers/addTransaction");
 const {
   getTransactions,
   editTransaction,
 } = require("../controllers/transactions");
+
+//  Purchased Book
 const {
   approveBook,
   cancelBook,
@@ -76,6 +86,7 @@ router.delete("/clear", authenticated, deleteSum);
 router.get("/books", getBooks);
 router.get("/promo", promo);
 router.get("/book/:id", getBooksById);
+router.delete("/del-book/:id", deleteBook);
 router.post(
   "/upload-book",
   uploadFiles("thumbnail", "bookAttachment"),

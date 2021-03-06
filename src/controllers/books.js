@@ -125,3 +125,25 @@ exports.promo = async (req, res) => {
     });
   }
 };
+
+exports.deleteBook = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    await Book.destroy({
+      where: {
+        id,
+      },
+    });
+
+    res.send({
+      status: "success",
+      message: `book with id ${id} was deleted`,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({
+      message: "Server Error",
+    });
+  }
+};
