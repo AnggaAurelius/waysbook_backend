@@ -26,9 +26,9 @@ exports.addTransaction = async (req, res) => {
       userId: req.user.id,
       payment: req.files.thumbnail[0].path,
       sum: 10000000,
-      // payment: "Pending",
-      createdAt: "2017-01-01",
-      updatedAt: "2019-01-11",
+      // // payment: "Pending",
+      // createdAt: "2017-01-01",
+      // updatedAt: "2019-01-11",
     });
     console.log(req.files.thumbnail[0].path);
     // const transaction = await Transaction.findOne({
